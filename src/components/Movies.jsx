@@ -67,7 +67,7 @@ function Movies() {
 
       <div
         className="flex 
-      flex-wrap justify-center"
+      flex-wrap justify-center  "
       >
         {movies.length == 0 ? (
           <div
@@ -96,8 +96,8 @@ function Movies() {
                 }}
                 key={movie.id}
                 className="
-            
-            w-40
+                
+            w-50
             h-50
             md: h-[40vh]
             md: w-[180px]

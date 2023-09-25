@@ -11,12 +11,12 @@ function Banner() {
         "https://api.themoviedb.org/3/movie/popular?api_key=7be79fbdaefa9130160b7b09f793c813"
       )
       .then((res) => {
-        setBannerMovie(res.data.results[10]);
+        setBannerMovie(res.data.results[0]);
       }, []);
   });
 
   return (
-    <div>
+    <div className="pl-10 pr-10">
       {
         bannerMovie == ""?
         <div className="
@@ -32,10 +32,7 @@ function Banner() {
         /></div>
         :
         <div className={
-          `bg-banner h-96
-          bg-cover bg-center
-          flex items-end
-
+          `bg-cover   h-auto text-white py-24 px-10 rounded-xl relative
           `
         }
         style={{
@@ -44,6 +41,13 @@ function Banner() {
         }}
         >
 
+<div className="md:w-1/2">
+        <p className="font-bold text-sm uppercase">Movie</p>
+        <p className="text-3xl font-bold">{bannerMovie.title}</p>
+        <p className="text-2xl mb-10 leading-none">{bannerMovie.overview}</p>
+        {/* <a href="#" className="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Movie</a> */}
+        </div>  
+{/* 
           <div className="
           text-xl
           font-bold
@@ -56,7 +60,7 @@ function Banner() {
           
           ">
             {bannerMovie.title}
-          </div>
+          </div> */}
         </div>
       }
     </div>
